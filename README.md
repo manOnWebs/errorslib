@@ -1,33 +1,38 @@
-# Absurd Errors Module
+# Errors Library
 
 ## What is this?
-This module defines a collection of absurdly specific and completely unnecessary errors! Perfect for blaming the user, the author, the code, your machine, or even the laws of logic itself.
+This module defines a collection of absurdly specific and completely unnecessary errors!
+Perfect for blaming the user, the author, the code, your machine, or even the laws of logic itself.
 
-Use at your own risk. Please. For the love of God.
+
+Use at your own risk... please, for the love of God!
+
 
 ## Why does this exist?
-Because sometimes, standard exceptions like `ValueError` or `RuntimeError` just don’t cut it. Sometimes, you need to express just how screwed up things are with more *precision*.
+
+Because... sometimes standard exceptions like `ValueError` or `RuntimeError` just don’t cut it. Sometimes, you need to express just how screwed up shit is with more *precision*.
+And how dumb your users are.
 
 ## Installation
-No need to install—just copy-paste it into your project and enjoy the chaos.
+`pip install errorslib`
 
 ## Usage
-Raise these errors when you need to make a point, confuse a junior developer, or just vent your frustration in a productive way:
+Raise these errors when you need to make a point, confuse a junior developer, or just vent your frustration in a productive way;
 
 ```python
 from absurd_errors import *
 
 # Blame the user
-raise UserIsAnIdiotError("PEBKAC confirmed.")
+raise UserIsAnIdiotError("PEBKAC")
 
 # Blame the developer
-raise ForgotToImplementError("You had one job.")
+raise ForgotToImplementError("one job")
 
 # Blame the code
-raise CodeIsFuckedUpError("Congratulations, you broke it.")
+raise CodeIsFuckedUpError("you found out my code SUCKS")
 
 # Blame reality
-raise ParadoxError("This should not be happening. Yet, here we are.")
+raise ParadoxError("This should not be happening...")
 ```
 
 ## Error Categories
