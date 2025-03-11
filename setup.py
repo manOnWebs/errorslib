@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="errorslib",  # Lowercase, no spaces
-    version="1.0",
+    version="1.3",
     packages=find_packages(),  # Auto-detects 'elib'
     install_requires=[],  # List dependencies if needed
     author="wowsuchdog",
@@ -13,11 +13,11 @@ setup(
     description="Why would you use this?",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/YOUR_USERNAME/errorslib",  # Replace with your actual GitHub URL
+    url="https://github.com/manOnWebs/errorslib",  # Replace with your actual GitHub URL
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    License="MIT License",
     python_requires=">=3.6",  # Ensures compatibility
 )

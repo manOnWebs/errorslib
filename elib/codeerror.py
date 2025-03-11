@@ -2,8 +2,14 @@
 Code Error
 """
 
-class CodeError(Exception):
+from .absexc import *
+
+class CodeError(AbsurdException):
     """The code needs to RTFM."""
+    pass
+
+class CodeWarning(AbsurdWarning):
+    """The code may need to RTFM"""
     pass
 
 class CodeIsFuckedUpError(CodeError):

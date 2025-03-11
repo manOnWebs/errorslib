@@ -2,19 +2,26 @@
 Logic Error
 """
 
-class LogicError(Exception):
+from .absexc import *
+from .dunnoerror import *
+
+class LogicError(AbsurdException):
     """Logic fucking died"""
     pass
 
-class NotAnError(LogicError):
-    """There is no error."""  # Wait, this is technically a paradox.
+class LogicWarning(AbsurdWarning):
+    """Logic injured itself"""
     pass
 
-class ParadoxError(LogicError):
+class ParadoxError(LogicError, WTFError):
     """Oh no! paradox."""
     pass
 
-class ThisErrorShouldNeverHappenError(LogicError):
+class NotAnError(LogicError, ParadoxError):
+    """There is no error."""  # Wait, this is technically a paradox.
+    pass
+
+class ThisErrorShouldNeverHappenError(LogicError, DunnoError):
     """this error should never happen."""
     pass
 

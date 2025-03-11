@@ -9,62 +9,112 @@ from .logicerror import LogicError
 from .usererror import UserError
 
 # Import all subclasses from their respective modules
-from .usererror import (
-    UserIsAnIdiotError, UserIsNotAnIdiotError, PICNICError,
-    FeatureNotABugError, UserIsUsingWindowsError, UserIsUsingMacOSError,
-    UserIsAppleSheepError, UserIsUsingLinuxError
-)
+from .absexc import (AbsurdException)
 
-from .deverror import (
-    AuthorError, AuthorIsAnIdiotError, DebuggingTimeError,
-    DidntImplementedError, ForgotToImplementError
-)
+from .usererror import *
 
-from .codeerror import (
-    CodeIsFuckedUpError, OvercomplicatedSolutionError,
-    UndercomplicatedSolutionError, OopsIDidItAgainError, NotAGoodError
-)
+from .deverror import *
 
-from .hardwareerror import (
-    WTFNoBiosError, WTFNoOS, NoInternetError,
-    NoKeyboardError, iGPUExistsError
-)
+from .codeerror import *
 
-from .logicerror import (
-    NotAnError, ParadoxError, ThisErrorShouldNeverHappenError,
-    ThisErrorIsInevitableError
-)
+from .hardwareerror import *
 
-from .dunnoerror import (
-    WTFError, IdiotError
-)
+from .logicerror import *
+
+from .dunnoerror import *
 
 # Define what gets imported when doing "from elib import *"
 __all__ = [
-    # Base Errors
-    "UserError", "DevError", "CodeError", "HardwareError", "LogicError", "DunnoError",
+    # Base Exception Classes
+    "UserError",
+    "DevError",
+    "CodeError",
+    "HardwareError",
+    "LogicError",
+    "DunnoError",
+    "AbsurdException",
+    "AbsurdWarning",
+    "AbsurdClass",
+    "Cat",
+    "Cats",
+    "Dog",
+    "AppleError",
+    "CatError",
+    "CatWarning",
+    "DogError",
+    "DogWarning",
+    "CatAstrophicError",
+    "CatastrophicDogError",
 
     # User Errors
-    "UserIsAnIdiotError", "UserIsNotAnIdiotError", "PICNICError",
-    "FeatureNotABugError", "UserIsUsingWindowsError", "UserIsUsingMacOSError",
-    "UserIsAppleSheepError", "UserIsUsingLinuxError",
+    "UserIsAnIdiotError",
+    "UserIsNotAnIdiotError",
+    "PICNICError",
+    "FeatureNotABugError",
+    "UserIsUsingWindowsError",
+    "UserIsUsingMacOSError",
+    "UserIsAppleSheepError",
+    "UserIsUsingLinuxError",
+    "UserIsUsingOSError",
+    "UserIsUsingOSWarning",
+    "RTFMError",
 
     # Developer Errors
-    "AuthorError", "AuthorIsAnIdiotError", "DebuggingTimeError",
-    "DidntImplementedError", "ForgotToImplementError",
+    "AuthorError",
+    "AuthorIsAnIdiotError",
+    "DebuggingTimeError",
+    "DidntImplementError",
+    "ForgotToImplementError",
 
     # Code Errors
-    "CodeIsFuckedUpError", "OvercomplicatedSolutionError",
-    "UndercomplicatedSolutionError", "OopsIDidItAgainError", "NotAGoodError",
+    "CodeIsFuckedUpError",
+    "OvercomplicatedSolutionError",
+    "UndercomplicatedSolutionError",
+    "OopsIDidItAgainError",
+    "NotAGoodError",
 
     # Hardware Errors
-    "WTFNoBiosError", "WTFNoOS", "NoInternetError",
-    "NoKeyboardError", "iGPUExistsError",
+    "WTFNoBiosError",
+    "WTFNoOS",
+    "NoInternetError",
+    "NoKeyboardError",
+    "iGPUExistsError",
+    "WiFiError",
+    "WifiWarning",
+    "ISPThrottlingAgainError",
+    "NeighborStoleWiFiError",
+    "WhyIsTheModemOnFireError",
+
+    # Pet Errors
+    "CatBecameRouterError",
+    "CatBecameModemError",
+    "CatBecameISPError",
+    "CatBecameFirewallError",
+    "DogBecameRouterError",
+    "DogBecameModemError",
+    "DogBecameISPError",
+    "DogBecameFirewallError",
+    "DogAteTheEthernetCableError",
+    "DogAndCatAteTheEthernetCableErrorAgain",
+    "DogAndCatAteTheRouterError",
+    "DogAndCatAteTheISPError",
+    "CatAteTheISPError",
+    "CatsAteTheISPError",
+    "CatsAreTheISPError",
+    "DogAndCatAreTheISPError",
+    "CatAteTheEthernetCableError",
+    "CatsAteTheEthernetCableError",
+    "CatsAteThePCAgainError",
+    "CatsAteTheWorldAgainError",
+    "CatsBecameThePythonInterpreterAgain",
 
     # Logic Errors
-    "NotAnError", "ParadoxError", "ThisErrorShouldNeverHappenError",
+    "NotAnError",
+    "ParadoxError",
+    "ThisErrorShouldNeverHappenError",
     "ThisErrorIsInevitableError",
 
     # WTF Errors
-    "WTFError", "IdiotError"
+    "WTFError",
+    "IdiotError",
 ]

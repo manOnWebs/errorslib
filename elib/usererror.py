@@ -2,11 +2,21 @@
 User Error
 """
 
-class UserError(Exception):
+from .absexc import *
+
+class UserError(AbsurdException):
     """User needs to RTFM."""
     pass
 
-class UserIsAnIdiotError(UserError):
+class UserWarning(AbsurdWarning):
+    """User may need to RTFM."""
+    pass
+
+class RTFMError(UserError):
+    """read the fucking manual"""
+    pass
+
+class UserIsAnIdiotError(UserError, RTFMError):
     """problem exists between keyboard and chair."""
     pass
 
@@ -22,18 +32,30 @@ class FeatureNotABugError(UserError):
     """it's a feature. Not a bug."""
     pass
 
-class UserIsUsingWindowsError(UserError):
+class UserIsUsingOSError(UserError):
+    """the user is using an operating system."""
+    pass
+
+class UserIsUsingOSWarning(AbsurdWarning):
+    """the user is using an operating system."""
+    pass
+
+class UserIsUsingWindowsError(UserIsUsingOSError):
     """the user is using an inferior operating system."""
     pass
 
-class UserIsUsingMacOSError(UserError):
-    """the user is using MacOS."""
+class AppleError(Exception):
+    """You use Apple..."""
     pass
 
-class UserIsAppleSheepError(UserError):
+class UserIsAppleSheepError(UserError, AppleError):
     """the user is an Apple sheep."""
     pass
 
-class UserIsUsingLinuxError(UserError):
-    """the user is a Linux elitist."""
+class UserIsUsingMacOSError(UserIsUsingOSError, UserIsAppleSheepError, AppleError):
+    """the user is using an even more inferior operating system."""
+    pass
+
+class UserIsUsingLinuxError(UserIsUsingOSWarning):
+    """the user is using a superior operating system."""
     pass
