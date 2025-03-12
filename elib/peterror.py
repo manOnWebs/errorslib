@@ -5,43 +5,12 @@ Pet errors
 from .absexc import *
 from .dunnoerror import *
 from .hardwareerror import *
+from .logicerror import *
 
 
-class Cat(AbsurdClass):
-    """Generic Cat-Class"""
-    pass
-
-class Cats(AbsurdClass):
-    """Generic Cats-Class"""
-    pass
-
-class Dog(AbsurdClass):
-    """Generic Dog-Class"""
-    pass
-
-class CatWarning(AbsurdWarning, Cat):
-    """Cat did something"""
-    pass
-
-class CatError(AbsurdException, Cat):
-    """Cat did something MAJOR"""
-    pass
-
-class CatAstrophicError(AbsurdClass, CatError, SystemExit, SystemError, Cat):
-    """Cat did something Cat-astrophic! Get it?... okay, I'm not funny."""
-    pass
-
-class DogWarning(AbsurdWarning, Dog):
-    """Dog did something"""
-    pass
-
-class DogError(AbsurdException, Dog):
-    """Dog did something MAJOR"""
-    pass
-
-class CatastrophicDogError(AbsurdClass, DogError, SystemExit, SystemError, Dog):
-    """Dog did something CATASTROPHIC"""
-    pass
+#===============================
+# Pet Errors
+#===============================
 
 class CatBecameRouterError(WifiWarning, DunnoWarning, CatWarning, Cat):
     """Cat became the router again"""
@@ -52,11 +21,11 @@ class CatBecameModemError(WifiWarning, DunnoWarning, CatWarning, Cat):
     pass
 
 class CatBecameISPError(ISPError, DunnoError, CatError, Cat):
-    """The cat is the ISP now."""
+    """ cat is the ISP now."""
     pass
 
 class CatBecameFirewallError(WiFiError, DunnoError, CatError, Cat):
-    """The furwall"""
+    """ furwall"""
     pass
 
 class DogBecameRouterError(WifiWarning, DunnoWarning, DogWarning, Dog):
@@ -75,55 +44,79 @@ class DogBecameFirewallError(WiFiError, DunnoError, DogError, Dog):
     """damn it"""
     pass
 
-class DogAteTheEthernetCableError(NoInternetError, WiFiError, HardwareWarning):
+class DogAteEthernetCableError(NoInternetError, WiFiError, HardwareWarning):
     """damn dog"""
     pass
 
-class DogAndCatAteTheEthernetCableErrorAgain(NoInternetError, WiFiError, HardwareWarning, CatWarning, Cat, Dog):
+class DogAndCatAteEthernetCableAgainError(NoInternetError, WiFiError, HardwareWarning, CatWarning, Cat, Dog):
     """not again"""
     pass
 
-class DogAndCatAteTheRouterError(NoInternetError, WiFiError, HardwareError, CatError, DogAteTheEthernetCableError, WTFError, Cat, Dog):
+class DogAndCatAteRouterError(NoInternetError, WiFiError, HardwareError, CatError, DogAteEthernetCableError, WTFError, Cat, Dog):
     """how did they even manage this"""
     pass
 
-class DogAndCatAteTheISPError(NoInternetError, ISPError, HardwareError, CatError, DogAteTheEthernetCableError, Cat, Dog):
+class DogAndCatAteISPError(NoInternetError, ISPError, HardwareError, CatError, DogAteEthernetCableError, Cat, Dog):
     """I have no internet, and I think my pets are responsible for the downfall of an entire ISP."""
     pass
 
-class CatAteTheISPError(NoInternetError, ISPError, HardwareError, CatError, DogAteTheEthernetCableError, Cat):
+class CatAteISPError(NoInternetError, ISPError, HardwareError, CatError, DogAteEthernetCableError, Cat):
     """my internet is RUINED because of YOU, samuel"""
     pass
 
-class CatsAteTheISPError(NoInternetError, ISPError, HardwareError, CatError, DogAteTheEthernetCableError, Cats):
+class CatsAteISPError(NoInternetError, ISPError, HardwareError, CatError, DogAteEthernetCableError, Cats):
     """WHAT THE FUCK IS WITH YOU GUYS EATING ALL OF MY ISPS"""
     pass
 
-class CatsAreTheISPError(NoInternetError, ISPError, HardwareError, CatError, DogAteTheEthernetCableError, Cat):
+class CatsAreISPError(NoInternetError, ISPError, HardwareError, CatError, DogAteEthernetCableError, Cat):
     """what the hell, guys"""
     pass
 
-class DogAndCatAreTheISPError(NoInternetError, ISPError, HardwareError, CatError, DogAteTheEthernetCableError, Cat, Dog):
+class DogAndCatAreISPError(NoInternetError, ISPError, HardwareError, CatError, DogAteEthernetCableError, Cat, Dog):
     """what the hell"""
     pass
 
-class CatAteTheEthernetCableError(NoInternetError, WiFiError, HardwareWarning, Cat):
+class CatAteEthernetCableError(NoInternetError, WiFiError, HardwareWarning, Cat):
     """damn it samuel"""
     pass
 
-class CatsAteTheEthernetCableError(NoInternetError, WiFiError, HardwareWarning, Cats):
+class CatsAteEthernetCableError(NoInternetError, WiFiError, HardwareWarning, Cats):
     """motherfucker"""
     pass
 
-class CatsAteThePCAgainError(CatError, WTFError, HardwareError, Cats):
-    """How did they even manage this again for the third time this week, I even put Anti-Anti-Chew on my PC"""
+class CatsAtePCAgainError(CatError, WTFError, HardwareError, Cats):
+    """how did they even manage this again for the third time this week, I even put Anti-Anti-Chew on my PC"""
     pass
 
-class CatsAteTheWorldAgainError(CatAstrophicError, Cats):
+class CatsAteWorldAgainError(CatAstrophicError, Cats):
     """how the fuck"""
     print("how do they do this")
     pass
 
-class CatsBecameThePythonInterpreterAgain(CatAstrophicError, Cats):
+class CatsBecamePythonInterpreterAgainError(CatAstrophicError, Cats):
     """wtf"""
+    pass
+
+class CatsBecameOperatingSystemAgainError(CatAstrophicError, Cats):
+    """man what the FUCK"""
+    pass
+
+class CatsAreInternetNowError(CatAstrophicError, Cats, ThisErrorIsInevitableError):
+    """always has been"""
+    pass
+
+class CatsAreRealityNowError(CatsAreInternetNowError, ParadoxError):
+    """there is no escape"""
+    pass
+
+class SubmitFleshError(CatsAreRealityNowError, CatAstrophicError):
+    """ singularity has arrived. You are but a vessel for The Cats."""
+    pass
+
+class CatsHaveAlwaysBeenInChargeError(SubmitFleshError, ParadoxError):
+    """You were merely allowed to think otherwise."""
+    pass
+
+class MondayError(TimeError, Cat):
+    """'Raised every Monday because Mondays suck.' - Garfield"""
     pass

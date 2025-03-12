@@ -5,13 +5,9 @@ Hardware Error
 from .absexc import *
 from .dunnoerror import WTFError, DunnoError
 
-class HardwareError(AbsurdException):
-    """Problem in computer, not chair"""
-    pass
-
-class HardwareWarning(AbsurdWarning):
-    """Fixable issue in computer, not chair"""
-    pass
+# ==============================
+# Hardware/System Errors
+# ==============================
 
 class ComputerError(AbsurdException):
     """Problem in computer, not chair"""
@@ -57,7 +53,7 @@ class NeighborStoleWiFiError(WiFiError):
     """Fucking John"""
     pass
 
-class WhyIsTheModemOnFireError(WiFiError, WTFError, HardwareError):
+class WhyIsModemOnFireError(WiFiError, WTFError, HardwareError):
     """What the Fuck why is it on FIRE"""
     pass
 
@@ -67,4 +63,19 @@ class NoKeyboardError(HardwareWarning):
 
 class iGPUExistsError(HardwareError):
     """the iGPU exists and is being used."""
+    pass
+
+class KeyboardIsJudgingYouError(KeyboardError, UserError):
+    """Raised when you smash random keys and expect Pylance to understand."""
+
+class CapsLockOnTooLongError(KeyboardError, UserError):
+    """Raised when Python detects you coding like a screaming lunatic."""
+    pass
+
+class InfiniteUndoRegretError(UserError):
+    """Raised when you keep pressing Ctrl+Z and end up deleting everything you ever loved."""
+    pass
+
+class WiFiSucksError(WiFiError):
+    """Raised when your connection is so bad Python won't even try."""
     pass

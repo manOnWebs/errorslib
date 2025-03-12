@@ -5,13 +5,9 @@ Logic Error
 from .absexc import *
 from .dunnoerror import *
 
-class LogicError(AbsurdException):
-    """Logic fucking died"""
-    pass
-
-class LogicWarning(AbsurdWarning):
-    """Logic injured itself"""
-    pass
+# ==============================
+# Logic Errors
+# ==============================
 
 class ParadoxError(LogicError, WTFError):
     """Oh no! paradox."""
@@ -27,4 +23,8 @@ class ThisErrorShouldNeverHappenError(LogicError, DunnoError):
 
 class ThisErrorIsInevitableError(LogicError):
     """this error is inevitable."""
+    pass
+
+class Y2k38Error(TimeError, LogicError):
+    """Raised when it's Y2k38. Oops"""
     pass

@@ -4,13 +4,9 @@ User Error
 
 from .absexc import *
 
-class UserError(AbsurdException):
-    """User needs to RTFM."""
-    pass
-
-class UserWarning(AbsurdWarning):
-    """User may need to RTFM."""
-    pass
+# ==============================
+# User-Related Errors
+# ==============================
 
 class RTFMError(UserError):
     """read the fucking manual"""
@@ -58,4 +54,24 @@ class UserIsUsingMacOSError(UserIsUsingOSError, UserIsAppleSheepError, AppleErro
 
 class UserIsUsingLinuxError(UserIsUsingOSWarning):
     """the user is using a superior operating system."""
+    pass
+
+class FileTooEmptyError(UserError):
+    """Raised when you try to read a file, but it's too empty to be worth your time."""
+    pass
+
+class FileTooFullError(UserError):
+    """Raised when we judge that your file has too much data."""
+    pass
+
+class FolderIsTooMessyError(UserError):
+    """Raised when we refuse to navigate a directory because it looks too unorganized."""
+    pass
+
+class HardDriveSighsInDisappointmentError(UserError):
+    """Raised when your disk is so fragmented we feel personally attacked."""
+    pass
+
+class TimeTravelDetectedError(TimeError, UserError):
+    """Raised when we somehow detect a date that shouldn't exist."""
     pass
